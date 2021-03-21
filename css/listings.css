@@ -1,0 +1,411 @@
+/*
+ Theme Name:     Divi Child
+ Author:         Elegant Themes
+ Template:       Divi
+*/
+
+/*
+  ========== 
+    IMAGES
+  ==========
+*/
+
+/* ==== Containers
+*/
+/* Big Container */
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1;
+  justify-content: center;
+}
+
+
+/* Multiple Listings -> Slideshow Container */
+.images-container{
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Listings -> Shortcode Single Row Display */
+
+.listings-images-container.single-line {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y;
+}
+.listings-images-container.single-line .img-container{
+  scroll-snap-align: center;
+  min-width: 525px;
+  max-width: 550px;
+}
+
+/* Listings -> Single Image Container */
+.img-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1.825em;
+  height: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  margin: 0;
+  z-index: 0;
+}
+
+
+.thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ==== Images
+*/
+
+.thumbnail-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-frame,
+.thumbnail-image{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Thumbnail Image*/
+.listings-img-frame{
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 300px;
+}
+
+/* Image Loop */
+.listing-img-frame {
+  height: 10em;
+  width: 14em;
+  margin-right: 1em;
+  margin-top: 2em;  
+}
+
+/*=========
+    Title
+  =========*/
+
+/*==== Mosaic Images Title
+*/
+
+.article-title :first-child{
+  margin-top: 1em;
+}
+
+
+/*=========
+    Meta
+  =========
+*/
+
+/*==== Mosaic Images Meta
+*/
+
+.meta-container{
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  grid-gap: 20px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,.40);
+  left: 0;
+  right: 0;
+  align-items: center;
+  color: rgba(368,368,368, .90);
+  font-size: 0.825em;
+  padding: 0.3em 1.5em;
+  font-weight: 600;
+  z-index: 3;
+}
+
+p.meta{
+  padding: 0;
+}
+
+/* ================
+    Single Listing
+  ==================*/
+
+/* ==== Cover Image
+*/
+
+
+/* ==== Page Title
+*/
+div.page-title{
+  border-bottom: 1px solid rgba(0,0,0, .25);
+  padding-bottom: 25px;
+  grid-column: 1/3;
+}
+
+
+/*==== Info
+*/
+:root{
+  --right-column: 30%;
+  --margin-sides: 7em;
+}
+
+.info-container{
+  display: grid;
+  grid-template-columns: 70% var(--right-column);
+  margin: 0 var(--margin-sides);
+  grid-gap: 35px;
+}
+
+.all-images-container,
+.description,
+.info{
+  grid-column: 1;
+}
+
+.summary{
+  grid-column: 2;
+
+  grid-row: 3/5;
+}
+
+.section-details,
+.detail,
+.details,
+.info,
+.summary{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details,
+.info,
+.summary{
+  flex-direction: column;
+}
+
+.details{
+  margin-bottom: 3em
+}
+
+
+/* ==== Single Detail
+*/
+.section-details,
+.detail{
+  flex-direction: row;
+}
+
+.detail{
+  align-items: center;
+  align-items: center;
+  margin-right: 1em;
+  margin-top: .125em;
+}
+
+.detail p{
+  margin-left: .425em;
+  font-size: .925em;
+}
+
+/*==== Summary
+*/
+
+.summary-container {
+  grid-column: 2;
+  grid-row: 3/5;
+  position: relative;
+}
+
+.summary-container .absolute-container{
+  position: absolute;
+}
+
+.summary-fixed{
+  position: fixed;
+  top: 188px;
+  border-bottom: 1px solid rgba(0,0,0, .25);
+  border-top: 1px solid rgba(0,0,0, .25);
+  padding: 35px 0;
+  width: 24%;
+} 
+
+
+
+/* Icon */
+.fas {
+  margin-right: 10px;
+}
+
+/* Hovering */
+
+a:hover,
+/* Images in Single Listing */
+.listing-img-frame:hover {
+  cursor: pointer;
+}
+
+.listing-img-frame,
+.container a {
+  position: relative;
+}
+
+.listing-img-frame:hover::before,
+.container a:hover::before {
+  position: absolute;
+  background-size: 15%;
+}
+
+.listing-img-frame::before{
+  background-image: url('../img/noun_two Arrow_3079291.png');
+}
+.container a::before {
+  background-image: url('../img/noun_open_379933.png');
+}
+
+.listing-img-frame::before,
+.img-container a::before{
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  background-color: rgba(0,0,0,0.45);
+  background-size: 13%;
+  transition: all 210ms ease-out;
+}
+
+
+/*
+  ==========
+    Mobile
+  ==========  
+*/
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+
+  /*==== Mobile Filter
+  */
+  .filtered-values button.clear{
+    padding: 10px;
+  }
+
+  /*==== Mobile Single Line Gallery
+  */
+
+  /* Reduce Side Padding */
+  .listings-images-container {
+    margin: 0px 2em;
+  }
+  /* Show Only One Image Full */
+  .listings-images-container.single-line,
+  .listings-images-container {
+    min-width: 100vw;
+    margin: 0%;
+  }
+
+  .listings-images-container.single-line .img-container,
+  .listings-images-container .img-container{
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .listings-images-container .img-container.single-line:last-child{
+    padding-right: 2em;
+  }
+  .previous, .next, .right, .left{
+    margin-top: 71px;
+    color: white;
+  }
+
+  /*
+    ===================
+      Single Listing 
+    ===================    
+  */
+
+  body.loaded{
+    font-size: smaller;
+  }
+ 
+  /* Pass to Single Column */
+  div.info-container {
+    grid-template-columns: 100%;
+    margin: 0 15px;
+  }
+  /* Slideshow Container */
+  div.ss-container{
+    grid-column: 1;
+  }
+
+  /* Buttons */
+  a.right,
+  a.left{
+    top: 0;
+    font-size: 30px;
+    color: white;
+  }
+
+  /* Right Summary */
+  /* in front of pictures but behind footer */
+  .summary-container{
+    z-index: 2;
+  }
+  /* make it come bakcin the flow for single column */
+  .summary-container .absolute-container {
+    position: relative;
+  }
+  /* full width fixed on scrren top */
+  .summary-fixed {  
+    top: 0;
+    background: white;
+    width: 100%;
+    left: 0;
+    padding-left: 2em;
+    border-top: none;
+  }
+  /* Set All To Grid Row 1 */
+  .summary-container,
+  div.page-title,
+  div.cover-image,
+  div.info-container iframe{
+    grid-column: 1;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #main-header{
+    z-index: 1;
+  }
+
+  /* Lightbox */
+  div.modal,
+  .logged-in div.modal{
+    top: 0;
+  }
+  div img.image-slide {
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  /* Min Image Width*/
+  .listings-images-container.single-line .img-container{
+    min-width: 525px;
+  }
+} 

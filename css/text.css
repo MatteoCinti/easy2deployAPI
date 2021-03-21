@@ -1,0 +1,87 @@
+/*
+ Theme Name:     Divi Child
+ Author:         Matteo Cinti 
+ Template:       Divi
+*/
+
+/* ===== Titles
+*/
+
+
+/* Section Title Single Page*/
+.section-title h3 {
+  font-weight: 600;
+}
+
+/* Summary Text */
+.summary-title{
+  font-size: 1.425em;
+}
+
+.summary .adress{
+  font-size: .925em;
+  color: #c6c6c6;
+  line-height: initial;
+}
+
+.summary-price{
+  color: #898989;
+  font-size: 2.225em;
+  font-weight: 200;
+  font-weight: 500;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+  margin-top: 4px;
+}
+
+
+/* Detail Lable Single Page */
+h5.label{
+  padding: 0;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+  font-weight: 700;
+}
+
+/* Custom */
+.section-title h3,
+h5.label,
+h3.article-title,
+h3.summary-title
+{
+color: rgba(0,0,0,0.65);
+}
+/* ===== Adresses
+*/
+
+/* Full Page Mosaic Adress */
+
+.article-title .localisation{
+  font-size: 0.885em;
+}
+
+
+
+/*
+  ========== 
+    Extra
+  ==========
+*/
+
+/* ==== Warning
+*/
+
+.meta.warning-meta {
+  color: red;
+  font-style: italic;
+  font-size: .725em;
+  line-height: 1.35em;
+}
+
+/*
+  ==========
+    Resets
+  ==========
+*/
+
+p{
+  padding: 0;
+}

@@ -1,0 +1,252 @@
+/*
+ Theme Name:     Divi Child
+ Author:         Elegant Themes
+ Template:       Divi
+*/
+
+/* ==== Slideshow
+*/
+
+
+.ss-container{
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/3;
+  margin-bottom: 5px;
+  flex-direction: column;
+  position: relative;
+}
+
+.mySlides {
+	display: none;
+  margin:  0 auto;
+}
+
+/* Single Listing -> Slideshow */
+.ss-container img{
+  width: 100%;
+  height: auto; 
+}
+
+
+.dot-container{
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+	background-color: #494B55;
+}
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	animation-name: fade;
+	animation-duration: 2s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+
+/*==== Modal
+*/
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20px;
+  left: 0;
+  top: 73px;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  bottom: 0;
+}
+
+.logged-in .modal {
+  top: 105px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  height: 90%;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.slide {
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+.slide > img {
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+}
+
+/* Next & previous buttons */
+.previous,
+.next,
+.right,
+.left {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: all 150ms ease;
+}
+
+
+/* Arrow for slideshow */
+.previous{
+  left: 0;
+  transform: translateX(-40%);
+}
+.next{
+  right: 0;
+  transform: translateX(35%);
+}
+
+a.left,
+a.right{
+  top: 49%;
+  color: white;
+}
+
+.right {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.previous:hover,
+.next:hover,
+.left:hover,
+.right:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+
+
+/* Set Dynamic Heigh and Width */
+img.image-slide{
+  width: auto;
+  height: 100%;
+}
+
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+/* Fix Footer Bug */
+
+footer{
+  position: relative;
+  z-index: 1;
+}
+
+.white-rubber{
+  height: 150px;
+  background-color: white;
+}
+.et_pb_section{
+  padding: 0;
+}
+
+#slide{
+	width:96%;
+	}
+	
+* {
+	box-sizing: border-box
+}
+
+

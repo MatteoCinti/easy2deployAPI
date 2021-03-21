@@ -1,0 +1,280 @@
+/* ==== Form
+*/
+
+form.properties-filter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  max-width: 1200px;
+  min-width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.properties-filter .container{
+  display: flex;
+  justify-content: center;
+}
+
+/* ==== Select
+*/
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+.box {
+  position: relative;
+}
+
+
+.box select {
+  background-color: lightsteelblue;
+  color: white;
+  padding: 12px;
+  width: 220px;
+  border: none;
+  font-size: 0.875em;
+  outline: none;
+  height: 100%;
+  padding: 5px 25px 12px;
+  border-right: 1px solid snow;
+}
+.multi-select-container,
+.box select{
+  filter: drop-shadow(9px 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 62px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.box:hover::before {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+
+/* ==== Multiselect
+*/
+
+.selectpicker {
+  --select-picker-margin: 0;
+  display: none;
+  position: absolute;
+  top: 61px;
+  left: 0;
+  z-index: 100;
+}
+
+select.flex{
+  display: flex;
+  filter: none;
+  height: auto;
+}
+
+/* Selected Option */
+
+/* multiselect display - select-dropdown & button*/
+.multi-select-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: lightsteelblue;
+  padding: 5px 25px 12px;
+  align-items: center;
+  border: none;
+}
+
+#multiselect-display{  
+  display: flex;
+  max-width: 447px;
+  flex-wrap: wrap;
+}
+
+.select-dropdown{
+  padding: 0 2em 0 1em;
+  background-color: lightsteelblue;
+  display: flex;
+  font-size: 0.875em;
+  height: 3em;
+  align-items: center;
+  color: white;
+  position: relative;
+  width: 220px;
+  cursor: pointer;
+}
+
+.option-selected{
+  display: flex;
+  align-items: center;
+  font-size: 0.725em;
+  background-color: snow;
+  height: 28px;
+align-self: center;
+  margin: 0px 3px 6px 0px;
+  padding: 0 7px;
+  border-radius: 6px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+}
+
+/* Some Kind of Styling for already Selcted Elements */ 
+select:not(:disabled) option:checked {
+  border-radius: 14px;
+  opacity: 0.5;
+  margin: 8px;
+}
+
+/* Cross */
+.cross {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  transform:rotate(45deg) translateY(1px);
+  -ms-transform:rotate(45deg) translateY(1px); /* IE 9 */
+  -webkit-transform:rotate(45deg) translateY(1px); /* Safari and Chrome */
+  margin-right: 6px;
+}
+
+.cross:before, .cross:after {
+ content: "";
+ position: absolute;
+ z-index: -1;
+ background: #898989;
+}
+
+.cross:before {
+ left: 50%;
+ width: 22%;
+ margin-left: -13%;
+ height: 97%;
+}
+
+.cross:after {
+ top: 50%;
+ height: 22%;
+ margin-top: -15%;
+ width: 100%;
+}
+
+
+.cross:hover,
+.select-dropdown::hover{
+  cursor: pointer;
+}
+
+/* Button */
+button,
+button.clear {
+  padding: 7px;
+  border-radius: 3px;
+  border: none;
+  background-color: snow;
+}
+
+/* ==== Filtered Values
+*/
+
+.filtered-values {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 810px;
+  background-color: lavender;
+  padding: 1.8em 5em 1em;
+  border-radius: 9px;
+  transform: translateY(-16px);
+  z-index: -1;
+}
+
+.selected-location {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+  justify-content: center;
+}
+
+.selected-option {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+
+
+  /* ==== Mobile Form
+  */
+
+  /* Top Space Padding */
+  .et_pb_column .et_pb_row_inner, .et_pb_row {
+    padding: 0;
+  }
+
+  /* Change Form Elements Direction */
+  form.properties-filter{
+    flex-direction: column;
+  }
+
+  .properties-filter .container {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0 !important;
+}
+
+  /* Full Width Form Selector */
+  form.properties-filter select{
+    width: 100%;
+    height: 55px;
+    border: none;
+  }
+
+  /* Forms Containers Shadow */
+  .multi-select-container, 
+  .box select {
+    filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.2));
+  }
+
+  /* Multi Selector in Column */
+  .multi-select-container{
+    grid-template-columns: auto;
+  }
+  .select-dropdown{
+    width: 100%;
+  }
+  /* Reset Position Absolute Height to auto */
+  #select-location {
+    height: auto;
+  }
+}
