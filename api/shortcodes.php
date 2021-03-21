@@ -204,7 +204,9 @@ function single_listing( $atts = array() ){
   
   // $src = 'https://www.google.com/maps/embed/v1/place?key='.$google_api_key.'&q=business%20horizons%20luxembourg';
 ?>
-<iframe width="1600" height="800" src="https://app.immoviewer.com/portal/tour/1523800" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<!-- Call Virtual Visit -->
+<?php  get_template_part( 'template-parts/listings/virtual-visit/virtual-visit','component', $listing[key($listing)]); ?>
 
 <!-- Call Map -->
 <?php  get_template_part( 'template-parts/listings/map/map','component', $listing[key($listing)]); ?>
