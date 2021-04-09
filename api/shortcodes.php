@@ -80,14 +80,57 @@ function sale_listings( $atts = array() ){
 
 
   <div class="filtered-values">
+    <?php if( function_exists( 'pll_current_language' ) ){ ?> 
 
-    <button type="submit">Filtrer les annonces</button>
-    <p class="selected-option-header"> <?php  echo count($filtered_listings) . ' ' ?> 
-      annonces trouvés 
-      <?php if(!empty($location)||$price !== '10000000000'||$category !== 'all'){ ?>
-        <?php echo 'suivant les filtres: '; ?>
+      <?php if( pll_current_language('slug') === 'fr' ){ ?>
+
+        <button type="submit">Filtrer les annonces</button>
+      
+        <p class="selected-option-header"> <?php  echo count($filtered_listings) . ' ' ?> 
+          annonces trouvés 
+          <?php if(!empty($location)||$price !== '10000000000'||$category !== 'all'){ ?>
+            <?php echo 'suivant les filtres: '; ?>
+          <?php } ?>
+        </p>
+
+      <?php } elseif( pll_current_language('slug') === 'en' ){ ?>
+
+        <button type="submit">Filter Listings</button>
+      
+        <p class="selected-option-header"> <?php  echo count($filtered_listings) . ' ' ?> 
+          Found listings
+          <?php if(!empty($location)||$price !== '10000000000'||$category !== 'all'){ ?>
+            <?php echo 'with the filters: '; ?>
+          <?php } ?>
+        </p>
+
+      <?php } elseif( pll_current_language('slug') === 'de' ){ ?>
+
+        <button type="submit">Filterhauslisten</button>
+      
+        <p class="selected-option-header"> <?php  echo count($filtered_listings) . ' ' ?> 
+          angebote gefunden
+          <?php if(!empty($location)||$price !== '10000000000'||$category !== 'all'){ ?>
+            <?php echo 'mit den Filtern: '; ?>
+          <?php } ?>
+        </p>
+
       <?php } ?>
-    </p>
+
+    <?php } else { ?>
+
+      <button type="submit">Filtrer les annonces</button>
+      
+      <p class="selected-option-header"> <?php  echo count($filtered_listings) . ' ' ?> 
+        annonces trouvés 
+        <?php if(!empty($location)||$price !== '10000000000'||$category !== 'all'){ ?>
+          <?php echo 'suivant les filtres: '; ?>
+        <?php } ?>
+      </p>
+
+
+    <?php } ?>
+
     <p>
       <?php 
         if($category !== 'all'){
@@ -136,6 +179,7 @@ function single_listing( $atts = array() ){
   ob_start(); 
   //API CALLS
   include_once "api-setup.php";
+  include_once __DIR__ . '/../functions.php';
   // include_once "...\Divi\epanel\custom_functions.php";
   global $listings;
   global $token;
@@ -145,12 +189,14 @@ function single_listing( $atts = array() ){
   ?>
 
 <?php 
-  // Filter single listing by Id and assign it to variable $listing
-  function filter_by_id($listing) { 
-    global $annonceId;
-    $annonceId = $_GET['annonceId'];
-    return $listing['info']['id'] == $annonceId;
-  }
+  // //Filter single listing by Id and assign it to variable $listing
+  // function filter_by_id($listing) { 
+  //   global $annonceId;
+  //   $annonceId = $_GET['annonceId'];
+  //   return $listing['info']['id'] == $annonceId;
+  // }
+
+  // filter_by_id is Declared in Functions.php
   $listing = array_filter($listings, "filter_by_id");
   $listing_key= key($listing);
   $this_listing= $listing[key($listing)];
@@ -167,8 +213,6 @@ function single_listing( $atts = array() ){
     <?php // Article  Title ?>
     <?php if( isset( $this_listing['info']['titre'] ) ){ ?>
       <h3 class="title article-title"><?php echo $this_listing['info']['titre']; ?></h3>
-    <?php } else { ?>
-      <p class="meta warning-meta"> "Titre" not set! Please add info. </p>
     <?php } ?>
   </div>
 

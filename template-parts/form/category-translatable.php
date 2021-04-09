@@ -25,6 +25,14 @@
         <option value='location' name="category">Rent</option>
       </select>
     </div>
+  <?php } elseif( pll_current_language('slug') === 'de' ){ ?>
+    <div class="box">
+      <select name='category'>
+        <option value='all' name="category" class='default-value'>( Verkauf und Vermietung )</option>
+        <option value='vente' name="category">Verkauf</option>
+        <option value='location' name="category">Miete</option>
+      </select>
+    </div>
   <?php } ?>
 
 <?php } else { ?>

@@ -18,9 +18,7 @@
         <div class="section-title"><h3> Description </h3></div>
         <?php echo $description['description_fr']; ?>
       </div>
-    <!-- <?php } //else { ?>
-      <p class="meta warning-meta"> "Description" not set! Please add info. </p>
-    <?php //} ?> -->
+    <?php } ?> 
 
   <?php } elseif( pll_current_language('slug') === 'en' ){ ?>
 
@@ -29,9 +27,16 @@
         <div class="section-title"><h3> Description </h3></div>
         <?php echo $description['description_en']; ?>
       </div>
-    <!-- <?php } //else { ?>
-      <p class="meta warning-meta"> "English Description" not set! Please add info. </p>
-    <?php //} ?> -->
+    <?php } ?> 
+
+  <?php }  elseif( pll_current_language('slug') === 'de' ){ ?>
+
+    <?php if( isset( $description['description_en'] ) ){ ?>
+      <div class="description">
+        <div class="section-title"><h3> Beschreibung </h3></div>
+        <?php echo $description['description_en']; ?>
+      </div>
+     <?php } ?> 
 
   <?php } ?>
 
@@ -42,8 +47,6 @@
         <div class="section-title"><h3> Description </h3></div>
         <?php echo $description['description_fr']; ?>
       </div>
-    <!-- <?php } //else { ?>
-      <p class="meta warning-meta"> "Description" not set! Please add info. </p>
-    <?php //} ?> -->
+     <?php } ?> 
 
 <?php } ?>

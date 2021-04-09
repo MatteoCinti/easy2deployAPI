@@ -17,9 +17,7 @@
   <?php // Article  Title ?>
     <?php if( isset( $info['titre'] ) ){ ?>
         <h3><?php echo $info['titre']; ?></h3>
-    <?php } //else { ?>
-      <!-- <p class="meta warning-meta"> "Titre" not set! Please add info. </p> -->
-  <?php //} ?>
+    <?php } ?>
 
   <?php // Article  Adress ?>
     <?php if( isset( $localisation['ville'] ) || isset( $localisation['pays'] ) ){ ?>
@@ -30,8 +28,6 @@
           ?>
         </p>
 
-    <!-- <?php } //else { ?>
-      <p class="meta warning-meta"> "Adress" not set! Please add info. </p>
-  <?php //} ?> -->
+    <?php } ?>
 
 </div>

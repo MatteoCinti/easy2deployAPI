@@ -46,6 +46,22 @@
 
     </div>
 
+  <?php } elseif( pll_current_language('slug') === 'de' ){ ?>
+
+    <div class="container img-container">
+      <?php echo '<a class="img-frame listings-img-frame" href="'.$home_url.'/auflistung?annonceId='.$info['id'].'">'; ?>
+        <!-- Image and the small banner -->
+          <?php echo '<img src="'.$photos['1']['url'].'" alt="" class="thumbnail-image">' ?>
+          <?php // Image Meta ?>
+          <?php get_template_part( 'template-parts/listings/img/image','meta', $args);  ?>
+
+      <?php echo '</a>' ?>
+
+      <?php // Image Title ?>
+      <?php get_template_part( 'template-parts/listings/img/image','title', $args);  ?>
+
+    </div>
+
   <?php } ?>
 
 <?php } else { ?>

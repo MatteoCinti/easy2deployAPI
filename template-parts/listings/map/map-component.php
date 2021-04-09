@@ -22,7 +22,7 @@
           $adresse = $localisation['adresse']; 
         }?>
         <?php if($localisation['adresse_num'] !== ""){
-          $adresse_num=$localisation['adresse_num'];    
+          $adresse_num=$localisation['adresse_num'];   
         }?>
         <?php if( $localisation['code_postal'] !== "" ){
           $code_postal = $localisation['code_postal']; 
@@ -37,7 +37,7 @@
 
 <?php 
   $src = 'https://www.google.com/maps/embed/v1/place?key='.$google_api_key.'&q='.
-  ( (isset($adresse))? $adresse.'%20' : "" ).
+  ( (isset($adresse))? str_replace(' ','%20',$adresse).'%20' : "" ).
   ( (isset($adresse_num))? $adresse_num.'%20' : "" ).
   ( (isset($code_postal))? $code_postal.'%20' : "" ).
   ( (isset($ville))? $ville.'%20' : "" ).
@@ -46,5 +46,6 @@
 
 
 <div style="grid-column:1;">
-  <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src=<?php echo $src ?> ></iframe>
+  <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src=<?php echo $src; ?> ></iframe>
 </div> 
+

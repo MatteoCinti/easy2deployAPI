@@ -69,6 +69,26 @@
             <?php } ?>          
           </h3>
 
+        <?php } elseif( pll_current_language('slug') === 'de' ){ ?>
+
+          <h3 class='summary-title title'>
+            <?php if( $info['nature'] === "Appartement" ){ ?>
+              Wohnung
+            <?php } elseif($info['nature'] === "Maison") { ?>
+              Haus
+            <?php } elseif($info['nature'] === "Garage") { ?>
+              Garage
+            <?php } ?>
+
+            <?php echo 'zu'; ?>  
+
+            <?php if( $info['vente_location'] === "vente" ){ ?>
+              verkaufen
+            <?php } elseif( $info['vente_location'] === "location" ) { ?>
+              vermieten
+            <?php } ?>          
+          </h3>
+
         <?php } ?>
 
       <?php } else { ?>
@@ -140,7 +160,7 @@
         <!-- Number of Bathrooms -->
         <?php if(isset( $pieces['salles_de_bain']) || $pieces['salle_de_douche'] ){ ?>
           <p class="meta">
-            <i class="fas fa-toilet"></i>
+            <i class="fas fa-shower"></i>
             <?php 
               $bathroom_total = $pieces['salles_de_bain'] + $pieces['salle_de_douche'];
               echo $bathroom_total; 

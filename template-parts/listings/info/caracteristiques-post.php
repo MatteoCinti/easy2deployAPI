@@ -14,7 +14,7 @@
 
   <?php if( pll_current_language('slug') === 'fr' ){ ?>
     <div class="details caracteristiques">
-      <div class="section-title"><h3>Caractéristiques</h3></div>
+      <div class="section-title"><h3>Caractéristique</h3></div>
       <div class="section-details">
 
         <!-- Single Appartment Details -->
@@ -45,7 +45,7 @@
         <?php // Garage ?>
         <?php  if( $parking['garages'] > 0 || $parking['garages'] != null ){ ?>
           <div class="detail">
-            <i class="fas fa-warehouse"></i><h5 class="label checker-label">Garage</h5>
+            <i class="fas fa-car"></i><h5 class="label checker-label">Garage</h5>
           </div>
         <?php } ?>
 
@@ -157,7 +157,7 @@
         <?php // Garage ?>
         <?php  if( $parking['garages'] > 0 || $parking['garages'] != null ){ ?>
           <div class="detail">
-            <i class="fas fa-warehouse"></i><h5 class="label checker-label">Garage</h5>
+            <i class="fas fa-car"></i><h5 class="label checker-label">Garage</h5>
           </div>
         <?php } ?>
 
@@ -236,7 +236,119 @@
         
       </div>
     </div>
-  <?php } ?>
+  <?php } elseif( pll_current_language('slug') === 'de' ){ ?>
+    <div class="details caracteristiques">
+      <div class="section-title"><h3>Merkmale</h3></div>
+      <div class="section-details">
+
+        <!-- Single Appartment Details -->
+        <?php // Meubles ?>
+        <?php  if( $interieur['meuble'] === true ){ ?>
+          <div class="detail">
+            <i class="fas fa-couch"></i><h5 class="label checker-label">Möbliert</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Cave a Vin ?>
+        <?php  if( $interieur['cave_a_vin'] === true ){ ?>
+          <div class="detail">
+            <i class="fas fa-wine-bottle"></i><h5 class="label checker-label">Weinkeller</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Animaux Acceptés ?>
+        <?php  if( $interieur['animaux_acceptes'] === true ){ ?>
+          <div class="detail">
+            <i class="fas fa-dog"></i><h5 class="label checker-label">Haustiere erlaubt</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Garage ?>
+        <?php  if( $parking['garages'] > 0 || $parking['garages'] != null ){ ?>
+          <div class="detail">
+            <i class="fas fa-car"></i><h5 class="label checker-label">Garage</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Gardien ?>
+        <?php  if( $securite['gardien'] === true ){ ?>
+          <div class="detail">
+            <i class="fas fa-user-shield"></i><h5 class="label checker-label">Hausmeister</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Lift ?>
+        <?php  if( $confort['ascenseur'] ){ ?>
+          <div class="detail">
+            <i class="fas fa-caret-square-left"></i><h5 class="label checker-label">Aufzug</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Installations hadicapes ?>
+        <?php  if( $confort['installation_handicapes'] ){ ?>
+          <div class="detail">
+          <i class="fab fa-accessible-icon"></i><h5 class="label checker-label">Behindertengerechte Einrichtungen</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Exterieur - Terasse ?>
+        <?php  if( $exterieur['terrasse'] ){ ?>
+          <div class="detail">
+            <i class="fas fa-border-none"></i><h5 class="label checker-label">Terrasse</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Exterieur - Veranda ?>
+        <?php  if( $exterieur['veranda'] != 0 ){ ?>
+          <div class="detail">
+          <i class="fab fa-pagelines"></i></i><h5 class="label checker-label">Veranda</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Exterieur - Balcon ?>
+        <?php  if( $exterieur['balcon'] != 0 ){ ?>
+          <div class="detail">
+            <i class="fas fa-border-all"></i><h5 class="label checker-label">Balkon</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Exterieur - Cour ?>
+        <?php  if( $exterieur['cour'] != 0 ){ ?>
+          <div class="detail">
+          <i class="fas fa-border-all"></i><h5 class="label checker-label">Innenhof</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Exterieur - Jardin ?>
+        <?php  if( $exterieur['jardin'] != 0 ){ ?>
+          <div class="detail">
+          <i class="fas fa-tree"></i><h5 class="label checker-label">Garten</h5>
+          </div>
+        <?php } ?>
+
+        <!-- Single Appartment Details -->
+        <?php // Coproprieté ?>
+        <?php  if( $divers['copropriete'] != 0 ){ ?>
+          <div class="detail">
+            <i class="far fa-handshake"></i><h5 class="label checker-label">Wohnungseigentum</h5>
+          </div>
+        <?php } ?>
+        
+        
+      </div>
+    </div>
+  <?php } ?> 
 
 <?php } else { ?>
   <div class="details caracteristiques">
@@ -271,7 +383,7 @@
       <?php // Garage ?>
       <?php  if( $parking['garages'] > 0 || $parking['garages'] != null ){ ?>
         <div class="detail">
-          <i class="fas fa-warehouse"></i><h5 class="label checker-label">Garage</h5>
+          <i class="fas fa-car"></i><h5 class="label checker-label">Garage</h5>
         </div>
       <?php } ?>
 

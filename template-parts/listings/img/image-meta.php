@@ -18,23 +18,19 @@
       <i class="fas fa-bed"></i>
       <?php echo $info['nombre_chambres']; ?> 
     </p>
-  <?php } //else { ?>
-    <!-- <p class="meta warning-meta"> "Nombre de Pieces" not set! Please add info. </p> -->
-  <?php //} ?>
+  <?php } ?>
 
 
   <!-- Number of Bathrooms -->
   <?php if(isset( $pieces['salles_de_bain']) || $pieces['salle_de_douche'] ){ ?>
     <p class="meta">
-      <i class="fas fa-toilet"></i>
+      <i class="fas fa-shower"></i>
       <?php 
         $bathroom_total = $pieces['salles_de_bain'] + $pieces['salle_de_douche'];
         echo $bathroom_total; 
       ?> 
     </p>
-  <?php } //else { ?>
-    <!-- <p class="meta warning-meta"> "Salles de Bain" & / or "Salle de douche" not set! Please add info. </p> -->
-  <?php //} ?> 
+  <?php } ?> 
 
 
    <!-- Total M2 -->
@@ -44,9 +40,7 @@
       <?php echo $info['surface_totale'];?> 
       m2
     </p>
-  <?php } //else { ?>
-    <!-- <p class="meta warning-meta"> "Surface Totale" not set! Please add info. </p> -->
-  <?php //} ?>  
+  <?php } ?>  
 
   
   <!-- Price -->
@@ -55,9 +49,7 @@
       <?php echo $prix['budget']; ?> 
       €
     </p>
-  <?php } //else { ?>
-    <!-- <p class="meta warning-meta"> "Budget" not set! Please add info. </p> -->
-  <?php //} ?>  
+  <?php } ?>  
 
 </div>
 
